@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1042740778151",
+    "project_id": "trend-graphicss",
+    "storage_bucket": "trend-graphicss.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042740778151:android:6aa626abb14389ffdaf782",
+        "android_client_info": {
+          "package_name": "com.example.trendgraphics"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMFnNOWt3erC3IyFNtl1EQAw2JEJzmmPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
