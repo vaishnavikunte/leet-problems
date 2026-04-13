@@ -1,0 +1,40 @@
+class Solution {
+    ListNode findnthNode(ListNode temp , int k){
+        int c=1;  //counter that starts from first node of l;
+        while(temp!=null){   
+            if(c==k)    // if counter reaches k i.e , len-k , then return 
+                return temp;
+            c++;
+            temp = temp.next;
+            
+        }
+        return temp;
+    }
+    public ListNode rotateRight(ListNode head, int k) {
+        if(head == null || k == 0){
+            return head;
+        }
+        ListNode tail = head;
+        int len = 1;
+        
+        while(tail.next != null){
+            tail = tail.next;
+            len++;
+        }
+
+        k = k%len;   // eg if k is 12 and len is 5, k%5 = 2 , therefore list will rotate only 2 times
+        if(k%len == 0){
+            return head;
+        }
+        
+
+        tail.next = head;
+        ListNode newLastNode = findnthNode(head , len-k);
+
+        head = newLastNode.next; // now the next node of the newLastNode becomes head
+        newLastNode.next = null;
+
+        return head;
+
+    }
+}
