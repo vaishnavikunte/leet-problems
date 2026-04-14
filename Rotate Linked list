@@ -28,7 +28,7 @@ class Solution {
         }
         
 
-        tail.next = head;
+        tail.next = head;  //original head will become tail's next
         ListNode newLastNode = findnthNode(head , len-k);
 
         head = newLastNode.next; // now the next node of the newLastNode becomes head
