@@ -1,0 +1,67 @@
+102. Binary Tree Level Order Traversal
+
+Description:
+Given the root of a binary tree, return the values of its nodes level by level, from left to right.
+
+Test Case:
+
+Input:  root = [3,9,20,null,null,15,7]
+Output: [[3],[9,20],[15,7]]
+
+Why?
+The tree is traversed one level at a time:
+
+        3
+       / \
+      9   20
+         /  \
+        15   7
+Level 1 → [3]
+Level 2 → [9,20]
+Level 3 → [15,7]
+
+So the answer is [[3],[9,20],[15,7]].
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();// because there is list within the list
+        if(root==null){
+            return result;
+        }
+        Queue<TreeNode> q= new LinkedList<>(); 
+        q.offer(root);//initially queue contains just room
+
+        while(!q.isEmpty()){
+            int size=q.size(); // initially size is just 1 , when root , then size becomes 3 and then keeps on increasing
+            List<Integer> level = new ArrayList<>();// sublist
+            for(int i=0;i<size;i++){
+                TreeNode node = q.poll();//take the next node from the queue
+                level.add(node.val);
+                if(node.left!=null){
+                    q.offer(node.left);
+                }
+                if(node.right!=null){
+                    q.offer(node.right);
+                }
+            }
+            result.add(level);
+        }
+        return result;
+
+    }
+}
