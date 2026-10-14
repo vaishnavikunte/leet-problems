@@ -1,0 +1,22 @@
+1791. Find Center of Star Graph
+
+Description:
+Given a star graph represented by an array edges, find the center node that is connected to every other node.
+
+Test Case:
+
+Input:  edges = [[1,2],[2,3],[4,2]]
+Output: 2
+
+Why?
+
+Node 2 appears in every edge, so it is connected to all other nodes. Therefore, the center is 2.
+
+class Solution {
+    public int findCenter(int[][] edges) {
+        if(edges[0][0]==edges[1][0] || edges[0][0] == edges[1][1]){
+            return edges[0][0];
+        }
+        return edges[0][1];
+    }
+}
