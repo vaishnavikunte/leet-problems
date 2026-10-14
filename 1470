@@ -1,0 +1,36 @@
+1470. Shuffle the Array
+
+Description:
+Given an array nums containing two halves [x1,x2,...,xn,y1,y2,...,yn], rearrange it by taking one element from each half alternately:
+
+[x1,y1,x2,y2,...,xn,yn]
+
+Test Case:
+
+Input:  nums = [2,5,1,3,4,7], n = 3
+Output: [2,3,5,4,1,7]
+
+Why?
+
+First half:  [2,5,1]
+Second half: [3,4,7]
+
+Take alternately:
+2 → 3 → 5 → 4 → 1 → 7
+
+So the answer is [2,3,5,4,1,7].
+
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        int[] arr= new int[nums.length];
+        int i=0,j=n,k=0;
+        while(i<n){
+            arr[k]=nums[i];
+            arr[k+1]=nums[j];
+            i++;
+            j++;
+            k=k+2;
+        }
+        return arr;
+    }
+}
