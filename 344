@@ -1,0 +1,35 @@
+344. Reverse String
+Difficulty: Easy
+
+Description:
+Given an array of characters s, reverse the array in-place. This means you must modify the original array without creating another array.
+
+Test Case:
+Input:  s = ['h','e','l','l','o']
+Output: ['o','l','l','e','h']
+
+
+Why?
+Original: h e l l o
+Reversed: o l l e h
+
+
+The first character swaps with the last, the second swaps with the second-last, and so on.
+
+So the final array is ['o','l','l','e','h'].
+
+class Solution {
+    public void reverseString(char[] s) {
+        int start=0, end = s.length-1;
+
+        while(start<=end){
+            char temp=s[start];
+            s[start]=s[end];
+            s[end]=temp;
+
+            start++;
+            end--;
+        }
+        
+    }
+}
