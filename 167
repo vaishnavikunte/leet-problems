@@ -1,0 +1,39 @@
+167. Two Sum II – Input Array Is Sorted
+Description:
+Given a sorted array of integers numbers and an integer target, find two different elements whose sum equals the target. Return their 1-based indices as an array [index1, index2].
+
+You cannot use the same element twice, and your solution must use constant extra space.
+
+Test Case:
+Input:  numbers = [2,7,11,15], target = 9
+Output: [1,2]
+
+
+Why?
+2 + 7 = 9
+
+
+The elements 2 and 7 are at indices 1 and 2 using 1-based indexing.
+
+So the answer is [1,2].
+
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        int j = numbers.length - 1,i=0;
+
+        while (i<j) {
+            int sum = numbers[i] + numbers[j];
+
+            if (sum == target) {
+                return new int[]{i+1,j+1};
+            } 
+            else if (sum < target) {
+                i++;
+            } 
+            else {
+                j--;
+            }
+        }
+        return new int[]{};
+    }
+}
